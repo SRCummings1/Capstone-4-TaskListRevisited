@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "EditTasks";
+}
+@model Tasks
+<h1>EditTasks</h1>
+
+
+<form action="../Tasks/EditTasks" method="post">
+
+    <input type="hidden" name="TaskOwnerId" value="@Model.TaskOwnerId" />
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    Task Description:<input type="text" name="TaskDescription" value="@Model.TaskDescription" />
+    Html.TextBox("date", @Model.DueDate.ToShortDateString()) 
+    Due Date: <input type="date" name="DueDate" value="@Model.DueDate.ToShortDateString()" required />
+    Completed: <input type="checkbox" name="Completed" value="True" />
+    <input type="hidden" name="Completed" value="False" />
+    <input type="submit" name="submit" value="Add To Tasks" />
+</form>
+
+
+@*@ViewBag.WhateverYouCalledIt*@
+

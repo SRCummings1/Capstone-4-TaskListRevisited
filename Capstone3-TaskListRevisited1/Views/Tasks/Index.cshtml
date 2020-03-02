@@ -1,0 +1,66 @@
+﻿@{
+        ViewData["Title"] = "Index";
+    }
+
+    @model List<Tasks>
+    <h1>Index</h1>
+
+    @*--List the tasks*@
+
+    <div class="table-bordered">
+        @foreach (Tasks task in Model)
+        {
+            <div class="col-md 4 table">
+
+                <table>
+                    <tr>
+                        <th>Task Description</th>
+                        <td>@task.TaskDescription</td>
+                    </tr>
+                    <tr>
+                        <th>Due Date</th>
+                        <td>@task.DueDate</td>
+                    </tr>
+                    <tr>
+                        <th>Completion</th>
+                        <td>@task.Completed</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../Tasks/EditTasks?id=@task.Id">Edit Task!</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../Tasks/DeleteTasks?id=@task.Id">Delete Task!</a></td>
+                    </tr>
+
+
+                </table>
+            </div>
+        }
+    </div>
+    <a href="../Tasks/AddTasks" class="btn-outline-dark">Add a new Task!</a>
+
+@*@{
+    ViewData["Title"] = "Index";
+}
+@model List<Tasks>
+<h1>Task List</h1>
+<table class="table">
+    <tr>
+        <th>Task Name</th>
+        <th>Due Date</th>
+        <th>Completed</th>
+    </tr>
+    @foreach (Tasks task in Model)
+    {
+        <tr>
+            <td>@task.TaskDescription</td>
+            <td>@task.DueDate.ToShortDateString()</td>
+            <td>@task.Completed</td>
+            <td><a href="../Tasks/ChangeStatus?id=@task.Id" class="btn btn-light">Change Completion State</a></td>
+            <td><a href="../Tasks/DeleteTask?id=@task.Id" class="btn btn-danger">Delete Task</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="../Tasks/AddTasks" class="btn btn-success">Add a task</a>*@

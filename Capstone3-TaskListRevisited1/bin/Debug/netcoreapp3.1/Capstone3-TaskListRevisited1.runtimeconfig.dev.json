@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\baxte\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\baxte\\.nuget\\packages"
+    ]
+  }
+}
